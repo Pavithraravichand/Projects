@@ -44,6 +44,24 @@ def view_users():
         return jsonify(result)
     except Exception as e:
         return jsonify({"success": False, "message": str(e)}), 400
+    
+@app.route('/view', methods=['GET'])
+def view_users():
+    try:
+        users = User.query.all()
+        result = [user.to_dict() for user in users]
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({"success": False, "message": str(e)}), 400
+    
+@app.route('/view', methods=['GET'])
+def view_users():
+    try:
+        users = User.query.all()
+        result = [user.to_dict() for user in users]
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({"success": False, "message": str(e)}), 400
 
 @app.route('/get_user/<int:id>', methods=['GET'])
 def get_user(id):
